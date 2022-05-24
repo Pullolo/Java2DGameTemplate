@@ -18,7 +18,9 @@ public class Game extends GamePanel {
 
     @Override
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         //Todo fill with code
+        g2.dispose();
     }
 }

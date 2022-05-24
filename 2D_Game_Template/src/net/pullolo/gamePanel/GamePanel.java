@@ -10,8 +10,8 @@ public abstract class GamePanel extends JPanel implements Runnable{
     private Thread gameThread;
     private int maxFPS = 60;
     private int fps;
-    public static final KeyBoardHandler keyBoardHandler = new KeyBoardHandler();
-    public static final MouseHandler mouseHandler = new MouseHandler();
+    public final KeyBoardHandler keyBoardHandler = new KeyBoardHandler();
+    public final MouseHandler mouseHandler = new MouseHandler();
 
     GamePanel(Dimension d){
         setPreferredSize(d);
@@ -58,7 +58,9 @@ public abstract class GamePanel extends JPanel implements Runnable{
     }
 
     public abstract void update();
-    public abstract void paintComponent(Graphics g);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+    }
 
     public int getMaxFPS() {
         return maxFPS;

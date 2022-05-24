@@ -5,7 +5,21 @@ import java.awt.event.KeyListener;
 
 public class KeyBoardHandler implements KeyListener {
 
-    private boolean w, a, s, d, up, down, left, right, q, e, r, x;
+    private boolean w;
+    private boolean a;
+    private boolean s;
+    private boolean d;
+    private boolean up;
+    private boolean down;
+    private boolean left;
+    private boolean right;
+    private boolean q;
+    private boolean e;
+    private boolean r;
+    private boolean x;
+    private boolean space;
+    private boolean shift;
+    private boolean ctrl;
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -50,6 +64,15 @@ public class KeyBoardHandler implements KeyListener {
         if (event.getKeyCode()==88){
             x=true;
         }
+        if (event.getKeyCode()==32){
+            space=true;
+        }
+        if (event.getKeyCode()==16){
+            shift=true;
+        }
+        if (event.getKeyCode()==17){
+            ctrl=true;
+        }
     }
 
     @Override
@@ -90,6 +113,15 @@ public class KeyBoardHandler implements KeyListener {
         if (event.getKeyCode()==88){
             x=false;
         }
+        if (event.getKeyCode()==32){
+            space=false;
+        }
+        if (event.getKeyCode()==16){
+            shift=false;
+        }
+        if (event.getKeyCode()==17){
+            ctrl=false;
+        }
     }
 
     public boolean isW() {
@@ -127,5 +159,14 @@ public class KeyBoardHandler implements KeyListener {
     }
     public boolean isX() {
         return x;
+    }
+    public boolean isSpace() {
+        return space;
+    }
+    public boolean isShift() {
+        return shift;
+    }
+    public boolean isCtrl() {
+        return ctrl;
     }
 }
